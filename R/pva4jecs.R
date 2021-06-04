@@ -5,7 +5,7 @@
 #' @docType package
 #' @name pva4jecs
 #'
-#'
+#' @importFrom ggplot2 ggplot aes theme_bw geom_path geom_point geom_text labs scale_x_continuous scale_y_continuous
 #'
 
 "_PACKAGE"
