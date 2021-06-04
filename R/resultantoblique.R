@@ -19,7 +19,7 @@ resultant_oblique <- function(x, y, z, X, ncols, nrows, k) { # Use oblique refer
   F011 <- z %*% y
   O01<- solve(z)
   A011 <- x %*% O01
-  SB <- scale_back(A011, F011, X, ncols = ncols, nrows = nrows, k = k)
+  SB <- scale_back(A011, F011, X, ncols = ncols, k = k, nrows = nrows)
   res <- list(A0 = SB$A0, F0 = SB$F0)
   return(res)
 }
