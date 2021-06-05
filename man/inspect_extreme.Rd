@@ -4,12 +4,12 @@
 \alias{inspect_extreme}
 \title{Inspect extreme}
 \usage{
-inspect_extreme(X, A0, O0, k)
+inspect_extreme(A0, A111, O0, k)
 }
 \arguments{
-\item{X}{original data matrix X}
-
 \item{A0}{A0}
+
+\item{A111}{A111}
 
 \item{O0}{O0}
 
