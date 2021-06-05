@@ -9,7 +9,7 @@
 #' @export
 #'
 
-cumvar <-function(x) {
+cumvar_plot <-function(x) {
   s_sumi <- 0
   s_sum <- sum(x)
   l <- length(x) - 1
@@ -21,11 +21,11 @@ cumvar <-function(x) {
 
   # Cumulative variance plot
   k_candidate <- 1:l
-  cumvar <- data.frame(x = k_candidate, y = s_cumu)
+  cumvar <- data.frame(k_candidate = k_candidate, s_cumu = round(s_cumu,2))
   cp <- ggplot(data = cumvar, aes(x = k_candidate, y = s_cumu)) + theme_bw() +
     geom_path() +
     geom_point(shape = 21, size = 3) +
-    geom_text(aes(label = round(y, 2)), nudge_y = 2) +
+    geom_text(aes(label = s_cumu), nudge_y = 2) +
     labs(title = 'Cumulative variance',
          x = 'Number of end-members',
          y = 'Cummulative percentage variance') +

@@ -2,7 +2,8 @@
 
 export(A_O)
 export(DENEG)
-export(cumvar)
+export(X_estimate)
+export(cumvar_plot)
 export(evlt)
 export(inspect_extreme)
 export(negative_A0)
