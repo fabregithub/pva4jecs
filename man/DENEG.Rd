@@ -4,14 +4,12 @@
 \alias{DENEG}
 \title{DENEG}
 \usage{
-DENEG(x, y, nrows, k)
+DENEG(X, A0, k)
 }
 \arguments{
-\item{x}{A0}
+\item{X}{original data matrix X}
 
-\item{y}{X estimate}
-
-\item{nrows}{Number of rows in the original matrix X}
+\item{A0}{A0}
 
 \item{k}{Number of end-members}
 }

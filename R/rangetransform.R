@@ -4,12 +4,12 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param x data
+#' @param X data
 #' @export
 #'
 
-range_transform <- function(x){
-  XT <- apply(x, 2, function(x) (x - min(x)) / (max(x) - min(x)))
+range_transform <- function(X){
+  XT <- apply(X, 2, function(x) (x - min(x)) / (max(x) - min(x)))
   return(XT)
 }
 

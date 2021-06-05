@@ -4,14 +4,16 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param x X111
-#' @param y X_estimate
+#' @param X oritinal data matrix X
 #' @param k number of end-members
 #'
 #' @export
 #'
 
-CD_plot <-function(x, y, k) {
+CD_plot <-function(X, k) {
+  x <- row_sum(X)
+  y <- estimate_X(X, k)
+
   cn <- colnames(x)
   Observed <- as.data.frame(x) %>% gather(cn, key = 'Names', value = 'Observed')
   colnames(y) <- cn

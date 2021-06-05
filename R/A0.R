@@ -4,14 +4,20 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param X A11 data
+#' @param X original data matrix X
 #' @param k number of end-members
 #'
 #' @export
 #'
 
-A_O <- function(X, k) { # get O0 from A11
-  X_copy <- X
+A_O <- function(X, k) {
+  x <- row_sum(X)
+  y <- evlt(x)
+  SVD <- La.svd(y)
+  S <- diag(SVD$d)
+  A11 <- SVD$u[, 1:k] %*% S[1:k, 1:k] # loading matrix
+
+  X_copy <- A11
   X_ix <- matrix(0, k)
   O0 <- matrix(0, k, k)
   for (i in 1:k){

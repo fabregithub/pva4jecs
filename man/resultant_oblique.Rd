@@ -4,20 +4,12 @@
 \alias{resultant_oblique}
 \title{Resultant oblique}
 \usage{
-resultant_oblique(x, y, z, X, ncols, nrows, k)
+resultant_oblique(X, A0, k)
 }
 \arguments{
-\item{x}{A0}
+\item{X}{original data matrix X}
 
-\item{y}{A11}
-
-\item{z}{O0}
-
-\item{X}{data}
-
-\item{ncols}{Number of columns in the original matrix X}
-
-\item{nrows}{Number of rows in the original matrix X}
+\item{A0}{A0}
 
 \item{k}{Number of end-members}
 }

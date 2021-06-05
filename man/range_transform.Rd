@@ -4,10 +4,10 @@
 \alias{range_transform}
 \title{Range transformation}
 \usage{
-range_transform(x)
+range_transform(X)
 }
 \arguments{
-\item{x}{data}
+\item{X}{data}
 }
 \description{
 Range transformation

@@ -7,7 +7,7 @@
 A_O(X, k)
 }
 \arguments{
-\item{X}{A11 data}
+\item{X}{original data matrix X}
 
 \item{k}{number of end-members}
 }

@@ -4,15 +4,17 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param x A0
-#' @param y X estimate
-#' @param nrows Number of rows in the original matrix X
+#' @param X original data matrix X
+#' @param A0 A0
 #' @param k Number of end-members
 #'
 #' @export
 #'
 # DENEG algorithm
-DENEG <- function(x, y, nrows, k){
+DENEG <- function(X, A0, k){
+  nrows <- nrow(X)
+  x <- A0
+  y <- estimate_X(X, k)
   D <- matrix(0, nrows, k)
   A_adj <- matrix(0, nrows, k)
   sum_d <- 1

@@ -4,12 +4,10 @@
 \alias{CD_plot}
 \title{CD plot}
 \usage{
-CD_plot(x, y, k)
+CD_plot(X, k)
 }
 \arguments{
-\item{x}{X111}
-
-\item{y}{X_estimate}
+\item{X}{oritinal data matrix X}
 
 \item{k}{number of end-members}
 }

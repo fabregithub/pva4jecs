@@ -4,10 +4,10 @@
 \alias{evlt}
 \title{Equal vector length transformation}
 \usage{
-evlt(x)
+evlt(X)
 }
 \arguments{
-\item{x}{data}
+\item{X}{data}
 }
 \description{
 Equal vector length transformation

@@ -4,18 +4,12 @@
 \alias{PVA}
 \title{PVA analysis}
 \usage{
-PVA(k, x, y, z, X, N = 10)
+PVA(X, k, N = 10)
 }
 \arguments{
+\item{X}{original data matrix, X}
+
 \item{k}{number of end-members}
-
-\item{x}{X11}
-
-\item{y}{transformed data = X111}
-
-\item{z}{original data = X}
-
-\item{X}{X_estimate}
 
 \item{N}{number of trials}
 }

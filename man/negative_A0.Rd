@@ -4,12 +4,12 @@
 \alias{negative_A0}
 \title{Negative A0}
 \usage{
-negative_A0(X, nrows, k)
+negative_A0(X, A0, k)
 }
 \arguments{
-\item{X}{data}
+\item{X}{original data matrix X}
 
-\item{nrows}{Number of rows in the original matrix X}
+\item{A0}{A0}
 
 \item{k}{Number of end-members}
 }

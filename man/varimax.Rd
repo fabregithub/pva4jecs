@@ -4,10 +4,10 @@
 \alias{varimax}
 \title{Varimax}
 \usage{
-varimax(Phi, gamma = 1, q = 20, tol = 1e-06)
+varimax(X, gamma = 1, q = 20, tol = 1e-06)
 }
 \arguments{
-\item{Phi}{Phi}
+\item{X}{A11}
 
 \item{gamma}{gamma}
 

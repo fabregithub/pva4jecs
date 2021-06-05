@@ -4,18 +4,22 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param x SVD distance
+#' @param X original data matrix, X
 #'
 #' @export
 #'
 
-CV_plot <-function(x) {
+CV_plot <-function(X) {
+  x <- row_sum(X)
+  y <- evlt(x)
+  z <- La.svd(y)
+
   s_sumi <- 0
-  s_sum <- sum(x)
-  l <- length(x) - 1
+  s_sum <- sum(z$d)
+  l <- length(z$d) - 1
   s_cumu <- matrix(0, l)
   for (i in 1:l) {
-    s_sumi <- s_sumi + x[i]
+    s_sumi <- s_sumi + z$d[i]
     s_cumu[i] <- s_sumi * 100 / s_sum
   }
 

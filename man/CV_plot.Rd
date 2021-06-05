@@ -4,10 +4,10 @@
 \alias{CV_plot}
 \title{Cumulative variance plot}
 \usage{
-CV_plot(x)
+CV_plot(X)
 }
 \arguments{
-\item{x}{SVD distance}
+\item{X}{original data matrix, X}
 }
 \description{
 Plotting cumulative variance plot to determine the best number of end-members (k)

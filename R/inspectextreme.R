@@ -4,18 +4,26 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param X A0
-#' @param Y A11
-#' @param Z O0
+#' @param X original data matrix X
+#' @param A0 A0
 #' @param k Number of end-members
 #'
 #' @export
 #'
 
-inspect_extreme <- function(X, Y, Z, k) {# A0, A11, O0
+inspect_extreme <- function(X, A0, k) {
+  x <- row_sum(X)
+  y <- evlt(x)
+  SVD <- La.svd(y)
+  S <- diag(SVD$d)
+  A11 <- SVD$u[, 1:k] %*% S[1:k, 1:k] # loading matrix
+  A111 <- varimax(A11, gamma = 1.0, q = 20, tol = 1e-6)
+  Y <- A11
+  Z <- A_O(A111, k = k)
+
   A0_ix1 <- matrix(0, k)
   A0_max <- matrix(0, k)
-  A_copy <- X
+  A_copy <- A0
   A11_copy <- Y
   for (i in 1:k) {
     A0_max[i] <- max(A_copy)
