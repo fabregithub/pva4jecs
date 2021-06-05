@@ -29,7 +29,7 @@ PVA <- function(X, k, N = 10) {
   n <- 0
   while (n < 10){
     A111 <- varimax(A11, gamma = 1.0, q = 20, tol = 1e-6)
-    O0 <- A_O(A111)
+    O0 <- A_O(A111, k)
     ro <- resultant_oblique(A111, F11, O0, X111, k)
     A0 <- ro$A0
     F0 <- ro$F0
