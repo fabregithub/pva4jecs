@@ -12,7 +12,7 @@
 #' @export
 #'
 
-X_estimate <- function(x, y, z, k) {
+estimate_X <- function(x, y, z, k) {
   S <- diag(x$d)
   A11 <- x$u[, 1:k] %*% S[1:k, 1:k] # loading matrix
   X11 <- evlt(y)
