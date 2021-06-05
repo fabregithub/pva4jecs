@@ -4,12 +4,16 @@
 \alias{resultant_oblique}
 \title{Resultant oblique}
 \usage{
-resultant_oblique(X, A0, k)
+resultant_oblique(X, A0, O0, A111, k)
 }
 \arguments{
 \item{X}{original data matrix X}
 
 \item{A0}{A0}
+
+\item{O0}{O0}
+
+\item{A111}{A111}
 
 \item{k}{Number of end-members}
 }

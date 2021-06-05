@@ -6,20 +6,20 @@
 #'
 #' @param X original data matrix X
 #' @param A0 A0
+#' @param O0 O0
 #' @param k Number of end-members
 #'
 #' @export
 #'
 
-inspect_extreme <- function(X, A0, k) {
+inspect_extreme <- function(X, A0, O0, k) { # A0, A11, O0
   x <- row_sum(X)
   y <- evlt(x)
   SVD <- La.svd(y)
   S <- diag(SVD$d)
   A11 <- SVD$u[, 1:k] %*% S[1:k, 1:k] # loading matrix
-  A111 <- varimax(A11, gamma = 1.0, q = 20, tol = 1e-6)
   Y <- A11
-  Z <- A_O(A111, k = k)
+  Z <- O0
 
   A0_ix1 <- matrix(0, k)
   A0_max <- matrix(0, k)

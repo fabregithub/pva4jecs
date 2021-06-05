@@ -10,6 +10,7 @@
 #'
 #' @export
 #'
+
 # DENEG algorithm
 DENEG <- function(X, A0, k){
   nrows <- nrow(X)

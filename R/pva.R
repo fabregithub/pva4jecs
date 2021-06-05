@@ -27,30 +27,30 @@ PVA <- function(X, k, N = 10) {
   n <- 0
   while (n < N){
     A111 <- varimax(A11, gamma = 1.0, q = 20, tol = 1e-6)
-    O0 <- A_O(A111, k = k)
-    ro <- resultant_oblique(X, A0, k)
+    O0 <- A_O(A111, k)
+    ro <- resultant_oblique(X, A0, O0, A111, k)
     A0 <- ro$A0
     F0 <- ro$F0
 
     #iteration of O0
     O00 <- O0
-    O0 <- inspect_extreme(X, A0, k)
+    O0 <- inspect_extreme(X, A0, O0, k)
 
-    ro <- resultant_oblique(X, A0, k)
+    ro <- resultant_oblique(X, A0, O0, A111, k)
     A0 <- ro$A0
     F0 <- ro$F0
     m <- 0
     while (any(!is.na(O0 - O00)) & m < 50){
       O00 <- O0
-      ro <- resultant_oblique(X, A0, k)
+      ro <- resultant_oblique(X, A0, O0, A111, k)
       A0 <- ro$A0
       F0 <- ro$F0
-      O0 <- inspect_extreme(X, A0, k)
+      O0 <- inspect_extreme(X, A0, O0, k)
       m <- m + 1
     }
     O0 <- O00
 
-    ro <- resultant_oblique(X, A0, k)
+    ro <- resultant_oblique(X, A0, O0, A111, k)
     A0 <- ro$A0
     F0 <- ro$F0
 

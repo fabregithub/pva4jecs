@@ -24,7 +24,7 @@ estimate_X <- function(X, k) {
   F11 <- F111 %*% y # scores matrix
 
   # Transform A11, F11 to original data
-  sb <- scale_back(X, k)
+  sb <- scale_back(A11, F11, X, k)
   X_estimate <- sb$A0 %*% sb$F0
   A0_initial <- sb$A0
 

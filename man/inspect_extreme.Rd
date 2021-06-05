@@ -4,12 +4,14 @@
 \alias{inspect_extreme}
 \title{Inspect extreme}
 \usage{
-inspect_extreme(X, A0, k)
+inspect_extreme(X, A0, O0, k)
 }
 \arguments{
 \item{X}{original data matrix X}
 
 \item{A0}{A0}
+
+\item{O0}{O0}
 
 \item{k}{Number of end-members}
 }

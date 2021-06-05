@@ -4,33 +4,24 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param X original data matrix X
+#' @param X A series
+#' @param Y F series
+#' @param Z original data matrix X
 #' @param k Number of end-members
 #'
 #' @export
 #'
 
-scale_back <- function(X, k) {
-  ncols <- ncol(X)
-  nrows <- nrow(X)
-
-  x <- row_sum(X)
-  y <- evlt(x)
-  SVD <- La.svd(y)
-  S <- diag(SVD$d)
-  A11 <- SVD$u[, 1:k] %*% S[1:k, 1:k] # loading matrix
-  A11T <- t(A11)
-  F111 <- solve(A11T %*% A11) %*% A11T
-  F11 <- F111 %*% y
-  Y <- A11
-  Z <- F11
+scale_back <- function(X, Y, Z, k) {
+  ncols <- ncol(Z)
+  nrows <- nrow(Z)
 
   xmin <- matrix(0, ncols)
   xmax <- matrix(0, ncols)
 
   for (j in 1:ncols){
-    xmin[j] <- min(x[,j])
-    xmax[j] <- max(x[,j])
+    xmin[j] <- min(Z[,j])
+    xmax[j] <- max(Z[,j])
   }
 
   sum1 <- sum(xmin)
@@ -45,21 +36,21 @@ scale_back <- function(X, k) {
   for (i in 1:k){
     m <- 0
     for (j in 1:ncols){
-      m <- m + Z[i,j]*(xmax[j]-xmin[j])
+      m <- m + Y[i,j]*(xmax[j]-xmin[j])
     }
     sk[i] <- (K-sum1)/m
   }
 
   for (i in 1:k){
     for (j in 1:ncols){
-      F1[i,j] <- sk[i]*Z[i,j]
+      F1[i,j] <- sk[i]*Y[i,j]
       F0[i,j] <- F1[i, j]*(xmax[j]-xmin[j]) + xmin[j]
     }
   }
 
   for (i in 1:nrows){
     for (j in 1:k){
-      A1[i,j] <- Y[i, j]/sk[j]
+      A1[i,j] <- X[i, j]/sk[j]
     }
     sumA1[i] <- sum(A1[i,])
   }
