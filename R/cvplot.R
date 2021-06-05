@@ -9,7 +9,7 @@
 #' @export
 #'
 
-cumvar_plot <-function(x) {
+CV_plot <-function(x) {
   s_sumi <- 0
   s_sum <- sum(x)
   l <- length(x) - 1

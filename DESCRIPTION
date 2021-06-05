@@ -14,5 +14,8 @@ Roxygen: list(markdown = TRUE)
 Suggests: 
     testthat (>= 3.0.0)
 Imports:
-    ggplot2
+    ggplot2,
+    ggpubr,
+    dplyr,
+    tidyr
 Config/testthat/edition: 3
