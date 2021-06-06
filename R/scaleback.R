@@ -4,6 +4,7 @@
 #'
 #' @author Shoji F. Nakayama
 #'
+#' @param x original data matrix X
 #' @param X A11
 #' @param Y F11
 #' @param Z X111
@@ -12,7 +13,10 @@
 #' @export
 #'
 
-scale_back <- function(X, Y, Z, k) {
+scale_back <- function(x, X, Y, Z, k) {
+  ncols <- ncol(x)
+  nrows <- nrow(x)
+
   xmin <- matrix(0, ncols)
   xmax <- matrix(0, ncols)
 

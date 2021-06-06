@@ -4,9 +4,11 @@
 \alias{scale_back}
 \title{Transform A11, F11 to original data}
 \usage{
-scale_back(X, Y, Z, k)
+scale_back(x, X, Y, Z, k)
 }
 \arguments{
+\item{x}{original data matrix X}
+
 \item{X}{A11}
 
 \item{Y}{F11}

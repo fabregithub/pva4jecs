@@ -11,9 +11,6 @@
 #'
 
 estimate_X <- function(X, k) {
-  nrows <- nrow(X)
-  ncols <- ncol(X)
-
   # Data transformation, each row sum to 1
   X111 <- row_sum(X)
 
@@ -25,7 +22,7 @@ estimate_X <- function(X, k) {
   A11T <- t(A11)
   F111 <- solve(A11T %*% A11) %*% A11T
   F11 <- F111 %*% X11 # scores matrix
-  sb <- scale_back(A11, F11, X111, k)
+  sb <- scale_back(X, A11, F11, X111, k)
   X_estimate <- sb$A0 %*% sb$F0
 
   return(X_estimate)

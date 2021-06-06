@@ -26,12 +26,12 @@ PVA <- function(X, k, N = 10) {
   A11T <- t(A11)
   F111 <- solve(A11T %*% A11) %*% A11T
   F11 <- F111 %*% X11 # scores matrix
-  sb <- scale_back(A11, F11, X111, k)
+  sb <- scale_back(X, A11, F11, X111, k)
   X_estimate <- sb$A0 %*% sb$F0
 
   n <- 0
   while (n < N){
-    A111 <- varimax(A11, gamma = 1.0, q = 20, tol = 1e-6)
+    A111 <- Varimax(A11, gamma = 1.0, q = 20, tol = 1e-6)
     O0 <- A_O(A111)
     ro <- resultant_oblique(A111, F11, O0, X111)
     A0 <- ro$A0

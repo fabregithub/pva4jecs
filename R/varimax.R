@@ -12,7 +12,7 @@
 #' @export
 #'
 
-varimax <- function(X, gamma = 1.0, q = 20, tol = 1e-6) {
+Varimax <- function(X, gamma = 1.0, q = 20, tol = 1e-6) {
   dims <- dim(X)
   R <- diag(dims[2])
   d <- 0
