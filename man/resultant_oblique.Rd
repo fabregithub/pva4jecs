@@ -4,7 +4,7 @@
 \alias{resultant_oblique}
 \title{Resultant oblique}
 \usage{
-resultant_oblique(x, y, z, X)
+resultant_oblique(x, y, z, Z, X, k)
 }
 \arguments{
 \item{x}{A111}
@@ -13,7 +13,11 @@ resultant_oblique(x, y, z, X)
 
 \item{z}{O0}
 
-\item{X}{X111}
+\item{Z}{X111}
+
+\item{X}{original data matrix X}
+
+\item{k}{number of end-members}
 }
 \description{
 Resultant oblique
