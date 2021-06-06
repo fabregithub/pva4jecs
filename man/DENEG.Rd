@@ -4,9 +4,11 @@
 \alias{DENEG}
 \title{DENEG}
 \usage{
-DENEG(x, y, k)
+DENEG(X, x, y, k)
 }
 \arguments{
+\item{X}{original data matrix X}
+
 \item{x}{A0}
 
 \item{y}{X_estimate}

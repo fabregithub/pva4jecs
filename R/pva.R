@@ -59,17 +59,17 @@ PVA <- function(X, k, N = 10) {
     A0 <- ro$A0
     F0 <- ro$F0
 
-    tag <- negative_A0(A0, k)
+    tag <- negative_A0(X, A0, k)
 
     if (tag != 0){
-      deg <- DENEG(A0, X_estimate, k) ## step iii - vi: see function DENEG, where adjust A0 as equation 7.23
+      deg <- DENEG(X, A0, X_estimate, k) ## step iii - vi: see function DENEG, where adjust A0 as equation 7.23
       A0 <- deg$A0
       F0 <- deg$F0
     }else{
       A0 <- A0
       F0 <- F0
     }
-    tag1 <- negative_F0(F0, k) # step vii: test the composition scores for positivity
+    tag1 <- negative_F0(X, F0, k) # step vii: test the composition scores for positivity
     if (tag1 == 0){
       A0 <- A0
       F0 <- F0
