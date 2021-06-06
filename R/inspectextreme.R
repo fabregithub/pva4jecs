@@ -7,11 +7,12 @@
 #' @param X A0
 #' @param Y A11
 #' @param Z O0
+#' @param k number of end-members
 #'
 #' @export
 #'
 
-inspect_extreme <- function(X, Y, Z) {# A0, A11, O0
+inspect_extreme <- function(X, Y, Z, k) {# A0, A11, O0
   A0_ix1 <- matrix(0, k)
   A0_max <- matrix(0, k)
   A_copy <- X

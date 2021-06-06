@@ -4,12 +4,14 @@
 \alias{DENEG}
 \title{DENEG}
 \usage{
-DENEG(x, y)
+DENEG(x, y, k)
 }
 \arguments{
 \item{x}{A0}
 
 \item{y}{X_estimate}
+
+\item{k}{number of end-members}
 }
 \description{
 DENEG algorithm

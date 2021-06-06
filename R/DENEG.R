@@ -6,11 +6,12 @@
 #'
 #' @param x A0
 #' @param y X_estimate
+#' @param k number of end-members
 #'
 #' @export
 #'
 
-DENEG <- function(x, y){
+DENEG <- function(x, y, k){
   D <- matrix(0, nrows, k)
   A_adj <- matrix(0, nrows, k)
   sum_d <- 1

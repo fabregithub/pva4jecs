@@ -4,7 +4,7 @@
 \alias{inspect_extreme}
 \title{Inspect extreme}
 \usage{
-inspect_extreme(X, Y, Z)
+inspect_extreme(X, Y, Z, k)
 }
 \arguments{
 \item{X}{A0}
@@ -12,6 +12,8 @@ inspect_extreme(X, Y, Z)
 \item{Y}{A11}
 
 \item{Z}{O0}
+
+\item{k}{number of end-members}
 }
 \description{
 Inspect extreme

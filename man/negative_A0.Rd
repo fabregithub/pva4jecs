@@ -4,10 +4,12 @@
 \alias{negative_A0}
 \title{Negative A0}
 \usage{
-negative_A0(X)
+negative_A0(X, k)
 }
 \arguments{
 \item{X}{A0}
+
+\item{k}{number of end-members}
 }
 \description{
 Negative A0

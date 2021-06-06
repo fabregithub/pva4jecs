@@ -4,10 +4,12 @@
 \alias{negative_F0}
 \title{Negative F0}
 \usage{
-negative_F0(X)
+negative_F0(X, k)
 }
 \arguments{
 \item{X}{F0}
+
+\item{k}{number of end-members}
 }
 \description{
 Negative F0

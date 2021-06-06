@@ -5,11 +5,12 @@
 #' @author Shoji F. Nakayama
 #'
 #' @param X F0
+#' @param k number of end-members
 #'
 #' @export
 #'
 
-negative_F0 <- function(X){
+negative_F0 <- function(X, k){
   n <- 0
   tag1 <- 0
   for (i in 1:k){
