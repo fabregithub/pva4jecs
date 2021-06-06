@@ -26,7 +26,7 @@ PVA <- function(X, k, N = 10) {
   A11T <- t(A11)
   F111 <- solve(A11T %*% A11) %*% A11T
   F11 <- F111 %*% X11 # scores matrix
-  sb <- scale_back(A11, F11, X111)
+  sb <- scale_back(A11, F11, X111, k)
   X_estimate <- sb$A0 %*% sb$F0
 
   n <- 0
