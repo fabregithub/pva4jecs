@@ -4,18 +4,16 @@
 \alias{resultant_oblique}
 \title{Resultant oblique}
 \usage{
-resultant_oblique(A111, F11, O0, X111, k)
+resultant_oblique(x, y, z, X)
 }
 \arguments{
-\item{A111}{A111}
+\item{x}{A111}
 
-\item{F11}{F11}
+\item{y}{F11}
 
-\item{O0}{O0}
+\item{z}{O0}
 
-\item{X111}{X111}
-
-\item{k}{Number of end-members}
+\item{X}{X111}
 }
 \description{
 Resultant oblique

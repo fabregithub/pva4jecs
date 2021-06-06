@@ -4,14 +4,10 @@
 \alias{negative_F0}
 \title{Negative F0}
 \usage{
-negative_F0(X, F0, k)
+negative_F0(X)
 }
 \arguments{
-\item{X}{original data matrix X}
-
-\item{F0}{F0}
-
-\item{k}{Number of end-members}
+\item{X}{F0}
 }
 \description{
 Negative F0

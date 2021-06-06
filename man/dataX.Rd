@@ -3,7 +3,7 @@
 \docType{data}
 \name{dataX}
 \alias{dataX}
-\title{Dataset X}
+\title{Sample data X}
 \format{
 An object of class \code{data.frame} with 119 rows and 9 columns.
 }
@@ -11,6 +11,6 @@ An object of class \code{data.frame} with 119 rows and 9 columns.
 dataX
 }
 \description{
-Dataset X is generated from Matrix A and F
+Sample data X is generated from Matrix A and F
 }
 \keyword{datasets}

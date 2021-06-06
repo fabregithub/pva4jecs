@@ -1,17 +1,17 @@
 #' Matrix A
 #'
-#' Matrix A is original data from the book to create the dataset X
+#' Matrix A is the loading matrix from the book to create the sample data X
 #'
 'orgA0'
 
 #' Matrix B
 #'
-#' Matrix F is original data from the book to create the dataset X
+#' Matrix F is the score matrix from the book to create the sample data X
 #'
 'orgF0'
 
-#' Dataset X
+#' Sample data X
 #'
-#' Dataset X is generated from Matrix A and F
+#' Sample data X is generated from Matrix A and F
 #'
 'dataX'

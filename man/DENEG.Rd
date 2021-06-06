@@ -4,17 +4,15 @@
 \alias{DENEG}
 \title{DENEG}
 \usage{
-DENEG(X, A0, k)
+DENEG(x, y)
 }
 \arguments{
-\item{X}{original data matrix X}
+\item{x}{A0}
 
-\item{A0}{A0}
-
-\item{k}{Number of end-members}
+\item{y}{X_estimate}
 }
 \description{
-DENEG
+DENEG algorithm
 }
 \author{
 Shoji F. Nakayama

@@ -4,22 +4,20 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param A111 A111
-#' @param F11 F11
-#' @param O0 O0
-#' @param X111 X111
-#' @param k Number of end-members
+#' @param x A111
+#' @param y F11
+#' @param z O0
+#' @param X X111
 #'
 #' @export
 #'
 
 # A111, F11, O0, X111
-resultant_oblique <- function(A111, F11, O0, X111, k) { # Use oblique reference axes to get the resultant oblique loadings and scores
-  F011 <- O0 %*% F11
-  O01<- solve(O0)
-  A011 <- A111 %*% O01
-  SB <- scale_back(A011, F011, X111, k)
+resultant_oblique <- function(x, y, z, X) { # Use oblique reference axes to get the resultant oblique loadings and scores
+  F011 <- z %*% y
+  O01<- solve(z)
+  A011 <- x %*% O01
+  SB <- scale_back(A011, F011, X, k)
   res <- list(A0 = SB$A0, F0 = SB$F0)
-
   return(res)
 }

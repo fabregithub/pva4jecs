@@ -4,14 +4,16 @@
 \alias{scale_back}
 \title{Transform A11, F11 to original data}
 \usage{
-scale_back(X, Y, Z, k)
+scale_back(X, A11, F11, X111, k)
 }
 \arguments{
-\item{X}{A series}
+\item{X}{original data matrix X}
 
-\item{Y}{F series}
+\item{A11}{A11}
 
-\item{Z}{original data matrix X}
+\item{F11}{F11}
+
+\item{X111}{X111}
 
 \item{k}{Number of end-members}
 }

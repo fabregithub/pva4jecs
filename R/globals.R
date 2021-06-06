@@ -1,1 +1,1 @@
-utils::globalVariables(c('..rr.label..'))
+utils::globalVariables(c('..rr.label..', 'k', 'ncols', 'nrows'))

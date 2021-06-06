@@ -11,6 +11,6 @@ An object of class \code{data.frame} with 119 rows and 7 columns.
 orgA0
 }
 \description{
-Matrix A is original data from the book to create the dataset X
+Matrix A is the loading matrix from the book to create the sample data X
 }
 \keyword{datasets}

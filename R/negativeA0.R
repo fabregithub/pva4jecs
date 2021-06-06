@@ -4,21 +4,17 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param X original data matrix X
-#' @param A0 A0
-#' @param k Number of end-members
+#' @param X A0
 #'
 #' @export
 #'
 
-negative_A0 <- function(X, A0, k) {
-  nrows <- nrow(X)
-  Y <- A0
+negative_A0 <- function(X){
   n <-0
   tag <- 0
   for (i in 1:nrows){
     for (j in 1:k){
-      if (Y[i, j]> (-0.25) & Y[i, j] < (-0.05)){
+      if (X[i, j]> (-0.25) & X[i, j] < (-0.05)){
         n <- n + 1
       }
       else{

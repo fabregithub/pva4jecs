@@ -4,24 +4,25 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param X A series
-#' @param Y F series
-#' @param Z original data matrix X
+#' @param X original data matrix X
+#' @param A11 A11
+#' @param F11 F11
+#' @param X111 X111
 #' @param k Number of end-members
 #'
 #' @export
 #'
 
-scale_back <- function(X, Y, Z, k) {
-  ncols <- ncol(Z)
-  nrows <- nrow(Z)
+scale_back <- function(X, A11, F11, X111, k) {
+  ncols <- ncol(X)
+  nrows <- nrow(X)
 
   xmin <- matrix(0, ncols)
   xmax <- matrix(0, ncols)
 
   for (j in 1:ncols){
-    xmin[j] <- min(Z[,j])
-    xmax[j] <- max(Z[,j])
+    xmin[j] <- min(X111[,j])
+    xmax[j] <- max(X111[,j])
   }
 
   sum1 <- sum(xmin)
@@ -36,21 +37,21 @@ scale_back <- function(X, Y, Z, k) {
   for (i in 1:k){
     m <- 0
     for (j in 1:ncols){
-      m <- m + Y[i,j]*(xmax[j]-xmin[j])
+      m <- m + F11[i,j]*(xmax[j]-xmin[j])
     }
     sk[i] <- (K-sum1)/m
   }
 
   for (i in 1:k){
     for (j in 1:ncols){
-      F1[i,j] <- sk[i]*Y[i,j]
+      F1[i,j] <- sk[i]*F11[i,j]
       F0[i,j] <- F1[i, j]*(xmax[j]-xmin[j]) + xmin[j]
     }
   }
 
   for (i in 1:nrows){
     for (j in 1:k){
-      A1[i,j] <- X[i, j]/sk[j]
+      A1[i,j] <- A11[i, j]/sk[j]
     }
     sumA1[i] <- sum(A1[i,])
   }
@@ -62,5 +63,6 @@ scale_back <- function(X, Y, Z, k) {
   }
 
   ans <- list(A0 = A, F0 = F0, sk = sk)
+
   return(ans)
 }

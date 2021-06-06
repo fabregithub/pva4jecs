@@ -1,10 +1,10 @@
-#' A0
+#' Generate O0 from A11
 #'
-#' A0
+#' Generate O0 from A11
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param X original data matrix X
+#' @param X A11
 #' @param k number of end-members
 #'
 #' @export

@@ -14,7 +14,6 @@ estimate_X <- function(X, k) {
   x <- row_sum(X)
   y <- evlt(x)
   SVD <- La.svd(y)
-
   S <- diag(SVD$d)
   A11 <- SVD$u[, 1:k] %*% S[1:k, 1:k] # loading matrix
   y <- evlt(x)

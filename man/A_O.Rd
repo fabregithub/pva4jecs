@@ -2,17 +2,17 @@
 % Please edit documentation in R/A0.R
 \name{A_O}
 \alias{A_O}
-\title{A0}
+\title{Generate O0 from A11}
 \usage{
 A_O(X, k)
 }
 \arguments{
-\item{X}{original data matrix X}
+\item{X}{A11}
 
 \item{k}{number of end-members}
 }
 \description{
-A0
+Generate O0 from A11
 }
 \author{
 Shoji F. Nakayama

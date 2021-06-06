@@ -4,16 +4,14 @@
 \alias{inspect_extreme}
 \title{Inspect extreme}
 \usage{
-inspect_extreme(A0, A111, O0, k)
+inspect_extreme(X, Y, Z)
 }
 \arguments{
-\item{A0}{A0}
+\item{X}{A0}
 
-\item{A111}{A111}
+\item{Y}{A11}
 
-\item{O0}{O0}
-
-\item{k}{Number of end-members}
+\item{Z}{O0}
 }
 \description{
 Inspect extreme

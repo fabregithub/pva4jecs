@@ -11,6 +11,6 @@ An object of class \code{data.frame} with 6 rows and 9 columns.
 orgF0
 }
 \description{
-Matrix F is original data from the book to create the dataset X
+Matrix F is the score matrix from the book to create the sample data X
 }
 \keyword{datasets}
