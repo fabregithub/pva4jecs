@@ -4,11 +4,11 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param X original data matrix X
+#' @param x data
 #' @export
 #'
 
-row_sum <- function(X){
-  X_row_sum <- X / apply(X, 1, sum)
+row_sum <- function(x){
+  X_row_sum <- x / apply(x, 1, sum)
   return(X_row_sum)
 }

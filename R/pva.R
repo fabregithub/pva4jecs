@@ -21,11 +21,14 @@ PVA <- function(X, k, N = 10) {
   # Equal vector length transformation
   X11 <- evlt(X111)
   SVD <- La.svd(X11) # Singular value decomposition
+
   S <- diag(SVD$d)
   A11 <- SVD$u[, 1:k] %*% S[1:k, 1:k] # loading matrix
+
   A11T <- t(A11)
   F111 <- solve(A11T %*% A11) %*% A11T
   F11 <- F111 %*% X11 # scores matrix
+
   sb <- scale_back(X, A11, F11, X111, k)
   X_estimate <- sb$A0 %*% sb$F0
 

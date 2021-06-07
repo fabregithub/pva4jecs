@@ -4,10 +4,10 @@
 \alias{row_sum}
 \title{Calculate sum of rows}
 \usage{
-row_sum(X)
+row_sum(x)
 }
 \arguments{
-\item{X}{original data matrix X}
+\item{x}{data}
 }
 \description{
 Data transform, each row sum to 100

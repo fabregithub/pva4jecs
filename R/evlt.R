@@ -9,7 +9,7 @@
 #'
 
 evlt <- function(X){
-  XT <- range_transform(X)
+  XT <- apply(X, 2, function(x) (x - min(x)) / (max(x) - min(x)))
   SM <- as.matrix(apply(XT, 1, function(x) sum(x ^ 2)))
   y <- 1 / sqrt(SM)
   Y <- diag(as.vector(y))
