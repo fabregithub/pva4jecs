@@ -2,9 +2,19 @@
 % Please edit documentation in R/pva4jecs.R
 \docType{package}
 \name{pva4jecs}
-\alias{pva4jecs}
 \alias{pva4jecs-package}
+\alias{pva4jecs}
 \title{pva4jecs}
 \description{
-This package is a translation from the Python code for polytopic vector analysis (PVA) developed by Dr Yang Ju.
+Tools for polytopic vector analysis (PVA). This package is an R
+translation of Python code for PVA developed by Dr. Yang Ju.
+}
+\author{
+\strong{Maintainer}: Shoji F. Nakayama \email{fabre@nies.go.jp}
+
+Authors:
+\itemize{
+  \item Shoji F. Nakayama \email{fabre@nies.go.jp}
+}
+
 }

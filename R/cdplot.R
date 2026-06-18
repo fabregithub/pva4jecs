@@ -1,35 +1,63 @@
 #' CD plot
 #'
-#' Creating coeﬀicient of determination (CD) plot to determine the best number of end-members (k)
+#' Creating coefficient of determination (CD) plot to determine the best number
+#' of end-members (`k`).
+#'
+#' @param X Original data matrix.
+#' @param k Number of end-members.
+#'
+#' @return A ggplot object.
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param X oritinal data matrix X
-#' @param k number of end-members
+#' @importFrom rlang .data
 #'
 #' @export
-#'
-
-CD_plot <-function(X, k) {
+CD_plot <- function(X, k) {
   x <- row_sum(X)
   y <- estimate_X(X, k)
 
   cn <- colnames(x)
-  Observed <- as.data.frame(x) %>% gather(cn, key = 'Names', value = 'Observed')
+
+  observed <- as.data.frame(x) |>
+    tidyr::pivot_longer(
+      cols = dplyr::everything(),
+      names_to = "Names",
+      values_to = "Observed"
+    )
+
   colnames(y) <- cn
-  Predicted <- as.data.frame(y) %>% gather(cn, key = 'Names.2', value = 'Predicted')
-  CD_data <- cbind(Observed, Predicted)
-  CD_data$Names <- CD_data$Names %>% factor(levels = cn)
 
-  cd <- ggplot(data = CD_data, aes(x = Observed, y = Predicted)) + theme_bw() +
-    geom_smooth(method = 'lm', formula = y ~ x, se = FALSE, colour = 'red', size = 0.5) +
-    geom_point() +
-    facet_wrap(~Names, scales = 'free') +
-    labs(title = paste('CD plot for k =', k, sep = ' '),
-         x = 'Measured values (transformed)',
-         y = 'Back calculated values') +
-    stat_cor(aes(label = ..rr.label..), digits = 3, colour = 'red')
+  predicted <- as.data.frame(y) |>
+    tidyr::pivot_longer(
+      cols = dplyr::everything(),
+      names_to = "Names.2",
+      values_to = "Predicted"
+    )
 
-  return(cd)
+  cd_data <- cbind(observed, predicted)
+  cd_data$Names <- factor(cd_data$Names, levels = cn)
+
+  ggplot2::ggplot(
+    data = cd_data,
+    ggplot2::aes(x = .data$Observed, y = .data$Predicted)
+  ) +
+    ggplot2::theme_bw() +
+    ggplot2::geom_smooth(
+      method = "lm",
+      formula = y ~ x,
+      se = FALSE,
+      linewidth = 0.5
+    ) +
+    ggplot2::geom_point() +
+    ggplot2::facet_wrap(ggplot2::vars(.data$Names), scales = "free") +
+    ggplot2::labs(
+      title = paste("CD plot for k =", k),
+      x = "Measured values (transformed)",
+      y = "Back calculated values"
+    ) +
+    ggpubr::stat_cor(
+      ggplot2::aes(label = ggplot2::after_stat(.data$rr.label)),
+      digits = 3
+    )
 }
-

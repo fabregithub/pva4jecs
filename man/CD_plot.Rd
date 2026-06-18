@@ -7,12 +7,16 @@
 CD_plot(X, k)
 }
 \arguments{
-\item{X}{oritinal data matrix X}
+\item{X}{Original data matrix.}
 
-\item{k}{number of end-members}
+\item{k}{Number of end-members.}
+}
+\value{
+A ggplot object.
 }
 \description{
-Creating coeﬀicient of determination (CD) plot to determine the best number of end-members (k)
+Creating coefficient of determination (CD) plot to determine the best number
+of end-members (\code{k}).
 }
 \author{
 Shoji F. Nakayama

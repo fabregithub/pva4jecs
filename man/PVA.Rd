@@ -4,17 +4,22 @@
 \alias{PVA}
 \title{PVA analysis}
 \usage{
-PVA(X, k, N = 10)
+PVA(X, k, N = 10, verbose = FALSE)
 }
 \arguments{
-\item{X}{original data matrix, X}
+\item{X}{Original data matrix.}
 
-\item{k}{number of end-members}
+\item{k}{Number of end-members.}
 
-\item{N}{number of trials}
+\item{N}{Maximum number of trials.}
+
+\item{verbose}{Logical. If \code{TRUE}, print iteration progress messages.}
+}
+\value{
+A named list with \code{A0} and \code{F0} matrices.
 }
 \description{
-Polytopic vector analysis (PVA) function
+Fit a polytopic vector analysis (PVA) model.
 }
 \author{
 Shoji F. Nakayama
